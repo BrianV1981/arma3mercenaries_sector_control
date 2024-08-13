@@ -3,7 +3,7 @@
 <details>
   <summary>fn_respawn_sectorControl_2.sqf</summary>
   
-  fn_respawn_sectorControl_1.sqf
+  fn_respawn_sectorControl_2.sqf
 
                      __..-----')
          ,.--._ .-'_..--...-'
@@ -45,12 +45,12 @@
   ### Features:
 
   - **Dynamic Respawn Creation:** Automatically creates a respawn point at preplaced markers when a faction takes control of the sector.
-  - **Flexible Configuration:** Works with predefined markers named `respawnWest_sector_1`, `respawnIndependent_sector_1`, and `respawnEast_sector_1`.
+  - **Flexible Configuration:** Works with predefined markers named `respawnWest_sector_2`, `respawnIndependent_sector_2`, and `respawnEast_sector_2`.
 
   ### How to Use:
 
   1. **Place Markers in the Editor:**
-     - Place markers on the map where you want respawn points to appear. Name them `respawnWest_sector_1`, `respawnIndependent_sector_1`, and `respawnEast_sector_1`.
+     - Place markers on the map where you want respawn points to appear. Name them `respawnWest_sector_2`, `respawnIndependent_sector_2`, and `respawnEast_sector_2`.
 
   2. **Save the Script:**
      - Save the `fn_respawn_sectorControl_2.sqf` script in your mission's `scripts/sector_control/` folder.
