@@ -35,6 +35,7 @@
       """--...  ___"""""-----......._______......----"""     --"""
                     """"       ---.....   ___....----
 
+</details>
 
   ## Sector Control Respawn Management Script
 
@@ -69,8 +70,6 @@
   - **Marker Names:** Ensure that the markers in the editor match the names used in the script.
   - **Respawn ID Management:** The script dynamically stores the respawn ID when a point is created and removes it when no longer needed, ensuring clean management of respawn points.
   - **Script Execution:** This script is triggered whenever the sector changes control, ensuring that only the controlling faction has access to the respawn point.
-
-</details>
 
   ### Features:
 
