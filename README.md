@@ -34,7 +34,7 @@
                     """"       ---.....   ___....----
 </details>
 
-  ## Enhanced Sector Control Respawn Management Scripts
+  ## Sector Control Respawn Management Scripts
 
   These scripts are designed to dynamically manage respawn points in Arma 3 based on sector control. Each script offers a different configuration for how respawn points are handled depending on which faction controls a sector. The scripts are:
 
