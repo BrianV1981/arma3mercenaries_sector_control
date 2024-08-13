@@ -1,6 +1,6 @@
-<details>
-  <summary>Arma 3 Sector Control Respawn Management Scripts</summary>
-  
+
+  <summary>fn_respawn_sectorControl_noAlignment_1.sqf, fn_respawn_sectorControl_independentWest_1.sqf, fn_respawn_sectorControl_independentEast_1.sqf, fn_respawn_sectorControl_1.sqf</summary>
+
                      __..-----')
          ,.--._ .-'_..--...-'
         '-"'. _/_ /  ..--''""'-.
@@ -35,16 +35,8 @@
 
   ## Sector Control Respawn Management Scripts
 
-  These scripts are designed to dynamically manage respawn points in Arma 3 based on sector control. Each script offers a different configuration for how respawn points are handled depending on which faction controls a sector. The scripts are:
-
-  - **fn_respawn_sectorControl_noAlignment_1.sqf**: No faction alignment.
-  - **fn_respawn_sectorControl_independentWest_1.sqf**: Independent and NATO (West) alliance.
-  - **fn_respawn_sectorControl_independentEast_1.sqf**: Independent and CSAT (East) alliance.
-  - **fn_respawn_sectorControl_1.sqf**: Base version, used as the foundation for all other variations.
-
-  Each script dynamically creates and removes respawn points at pre-placed markers based on which faction controls the sector. Additionally, each script has custom logic to manage allied factions, if any.
-
-  ### Features:
+  <details>
+  <summary>Features</summary>
 
   - **Dynamic Respawn Creation:** Automatically creates a respawn point at preplaced markers when a faction takes control of the sector.
   - **Joint Respawn Logic:** Configurable logic for faction alliances:
@@ -54,7 +46,10 @@
   - **Mission Status Notifications:** Displays a custom message when a sector is secured, including the capturing faction's name, map grid, and military time.
   - **Flexible Configuration:** Works with predefined markers named `respawnWest_sector_1`, `respawnIndependent_sector_1`, and `respawnEast_sector_1`.
 
-  ### Script Descriptions
+  </details>
+
+  <details>
+  <summary>Script Descriptions</summary>
 
   #### 1. `fn_respawn_sectorControl_independentWest_1.sqf`
 
@@ -104,7 +99,10 @@
   - **Independent Control:**
     - Only Independent will have a respawn point.
 
-  ### How to Use
+  </details>
+
+  <details>
+  <summary>How to Use</summary>
 
   1. **Place Markers in the Editor:**
      - Place markers on the map where you want respawn points to appear. Name them `respawnWest_sector_1`, `respawnIndependent_sector_1`, and `respawnEast_sector_1`.
@@ -123,10 +121,15 @@
   4. **Testing:**
      - Start your mission and observe how the respawn points are created or disabled based on sector control changes.
 
-  ### Important Notes:
+  </details>
+
+  <details>
+  <summary>Important Notes</summary>
 
   - **Marker Names:** Ensure that the markers in the editor match the names used in the script.
-  - **Respawn ID Management:** The scripts dynamically store the respawn ID when a point is created and removes it when no longer needed, ensuring clean management of respawn points.
+  - **Respawn ID Management:** The scripts dynamically store the respawn ID when a point is created and remove it when no longer needed, ensuring clean management of respawn points.
   - **Script Execution:** These scripts are triggered whenever the sector changes control, ensuring that only the controlling faction(s) have access to the respawn point.
+
+  </details>
 
 </details>
