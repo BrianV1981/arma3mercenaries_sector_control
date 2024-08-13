@@ -179,7 +179,7 @@
      - In the Expression field (found under System Specific - Sector category), enter the following line:
      
      ```sqf
-     [_this select 0, _this select 1, _this select 2] execVM 'scripts\sector_control\fn_respawn_sectorControl_2.sqf';
+     [_this select 0, _this select 1, _this select 2] execVM 'scripts\sector_control\fn_respawn_sectorControl_1.sqf';
      ```
 
   4. **Testing:**
