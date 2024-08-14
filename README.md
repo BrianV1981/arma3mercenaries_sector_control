@@ -1,5 +1,5 @@
-
-  <summary>fn_respawn_sectorControl_noAlignment_1.sqf, fn_respawn_sectorControl_independentWest_1.sqf, fn_respawn_sectorControl_independentEast_1.sqf, fn_respawn_sectorControl_1.sqf</summary>
+## Sector Control Respawn Management Scripts
+![arma3mercenaries_v1.webp](arma3mercenaries_v1.webp)
 
                      __..-----')
          ,.--._ .-'_..--...-'
@@ -34,6 +34,10 @@
                     """"       ---.....   ___....----
 
   ## Sector Control Respawn Management Scripts
+```fn_respawn_sectorControl_noAlignment_1.sqf```
+```fn_respawn_sectorControl_independentWest_1.sqf```
+```fn_respawn_sectorControl_independentEast_1.sqf```
+```fn_respawn_sectorControl_1.sqf```
 
   <details>
   <summary>Features</summary>
