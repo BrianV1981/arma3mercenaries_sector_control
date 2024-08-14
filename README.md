@@ -112,13 +112,13 @@
      - Place markers on the map where you want respawn points to appear. Name them `respawnWest_sector_1`, `respawnIndependent_sector_1`, and `respawnEast_sector_1`.
 
   2. **Save the Script:**
-     - Save the selected script in your mission's `scripts/sector_control/` folder.
+     - Save the selected script in your mission's 'arma3mercenaries\sector_control\' folder.
 
   3. **Configure the Sector Control Module:**
      - In the Arma 3 editor, place a `ModuleSector_F`.
      - In the Expression field (found under System Specific - Sector category), enter the following line:
      
-     [_this select 0, _this select 1, _this select 2] execVM 'scripts/sector_control/fn_respawn_sectorControl_noAlignment_1.sqf';
+     [_this select 0, _this select 1, _this select 2] execVM 'arma3mercenaries\sector_control\fn_respawn_sectorControl_noAlignment_1.sqf';
 
      Replace `fn_respawn_sectorControl_noAlignment_1.sqf` with the appropriate script name based on the desired logic.
 

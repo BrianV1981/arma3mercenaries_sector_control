@@ -53,14 +53,14 @@
      - Place markers on the map where you want respawn points to appear. Name them `respawnWest_sector_2`, `respawnIndependent_sector_2`, and `respawnEast_sector_2`.
 
   2. **Save the Script:**
-     - Save the `fn_respawn_sectorControl_2.sqf` script in your mission's `scripts/sector_control/` folder.
+     - Save the `fn_respawn_sectorControl_2.sqf` script in your mission's `arma3mercenaries/sector_control folder.
 
   3. **Configure the Sector Control Module:**
      - In the Arma 3 editor, place a `ModuleSector_F`.
      - In the Expression field (found under System Specific - Sector category), enter the following line:
      
      ```sqf
-     [_this select 0, _this select 1, _this select 2] execVM 'scripts\sector_control\fn_respawn_sectorControl_2.sqf';
+     [_this select 0, _this select 1, _this select 2] execVM 'arma3mercenaries\sector_control\fn_respawn_sectorControl_2.sqf';
      ```
 
   4. **Testing:**

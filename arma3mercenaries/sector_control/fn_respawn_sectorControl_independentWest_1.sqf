@@ -1,8 +1,8 @@
 /*
 <details>
-  <summary>fn_respawn_sectorControl_noAlignment_1.sqf</summary>
+  <summary>fn_respawnsectorControl_independentWest_1.sqf</summary>
   
-  fn_respawn_sectorControl_noAlignment_1.sqf
+  fn_respawnsectorControl_independentWest_1.sqf
 
                      __..-----')
          ,.--._ .-'_..--...-'
@@ -21,10 +21,10 @@
                       (#///)
                        \#///\
                        (##///)
-                       (##///)
-                       (##///)
-                       (##///)
-                        \##///\
+                       (BV///)
+                       (+#///)
+                       (JL///)
+                        \=#///\
                         (ANV///)
                         (IRV///)
                         (MWV////)__...-----....__
@@ -43,7 +43,7 @@
   ### Features:
 
   - **Dynamic Respawn Creation:** Automatically creates a respawn point at preplaced markers when a faction takes control of the sector.
-  - **Individual Faction Logic:** Each faction (NATO, CSAT, Independent) has its own respawn point, and no factions are allied.
+  - **Joint Respawn Logic:** If Independent or West controls the sector, both factions get a respawn point. If CSAT (East) controls the sector, only CSAT gets a respawn point.
   - **Mission Status Notifications:** Displays a custom message when a sector is secured, including the capturing faction's name, map grid, and military time.
   - **Flexible Configuration:** Works with predefined markers named `respawnWest_sector_1`, `respawnIndependent_sector_1`, and `respawnEast_sector_1`.
 
@@ -53,14 +53,14 @@
      - Place markers on the map where you want respawn points to appear. Name them `respawnWest_sector_1`, `respawnIndependent_sector_1`, and `respawnEast_sector_1`.
 
   2. **Save the Script:**
-     - Save the `fn_respawn_sectorControl_noAlignment_1.sqf` script in your mission's `scripts/sector_control/` folder.
+     - Save the `fn_respawnsectorControl_independentWest_1.sqf` script in your mission's `arma3mercenaries/sector_control folder.
 
   3. **Configure the Sector Control Module:**
      - In the Arma 3 editor, place a `ModuleSector_F`.
      - In the Expression field (found under System Specific - Sector category), enter the following line:
      
      ```sqf
-     [_this select 0, _this select 1, _this select 2] execVM 'scripts\sector_control\fn_respawn_sectorControl_noAlignment_1.sqf';
+     [_this select 0, _this select 1, _this select 2] execVM 'arma3mercenariessector_control\fn_respawnsectorControl_independentWest_1.sqf';
      ```
 
   4. **Testing:**
@@ -105,7 +105,7 @@ private _factionName = "";
 switch (true) do {
     case (_ownerSide == west): { _factionName = "NATO"; };
     case (_ownerSide == east): { _factionName = "CSAT"; };
-    case (_ownerSide == independent): { _factionName = "AAF"; };
+    case (_ownerSide == independent): { _factionName = "Independent"; };
 };
 
 // Enable the respawn point for the faction that took control
@@ -114,7 +114,7 @@ switch (true) do {
     private _side = _x select 1;
 
     // If the new owner side matches the side associated with the marker
-    if (_ownerSide == _side) then {
+    if (_ownerSide == _side || (_ownerSide == independent && _side == west) || (_ownerSide == west && _side == independent)) then {
         // Get the position of the marker
         private _markerPos = getMarkerPos _markerName;
 
@@ -131,9 +131,11 @@ switch (true) do {
 private _time = date;
 private _hours = _time select 3;
 private _minutes = _time select 4;
-[
-    format ["Ft. MAGA Seized by %1", _factionName],
-    format ["Sector: %1.", mapGridPosition _sector],
-    format ["Time: %1:%2", _hours, _minutes]
-] spawn BIS_fnc_infoText;
+private _message = format ["Sector Seized by %1<br/>Sector Location: %2<br/>Time Captured: %3:%4", _factionName, mapGridPosition _sector, _hours, _minutes];
 
+// Send dynamic text to all players only
+{
+    if (isPlayer _x) then {
+        [_message, 0.9, 0.9, 30, 1, 0, 789] remoteExec ["BIS_fnc_dynamicText", _x];
+    };
+} forEach allPlayers;
